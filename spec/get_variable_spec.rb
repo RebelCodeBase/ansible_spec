@@ -302,8 +302,8 @@ describe "get_hash_behaviourの実行" do
       expect(@res.instance_of?(Hash)).to be_truthy
     end
   
-    it 'exists five pairs in Hash' do
-      expect(@res.length).to eq 11
+    it 'exist fourteen pairs in Hash' do
+      expect(@res.length).to eq 14
     end
   
     it 'exist all pairs' do
@@ -318,6 +318,9 @@ describe "get_hash_behaviourの実行" do
       expect(@res).to include({'var_nested_array_2' => ['val_array']})
       expect(@res).to include({'var_nested_array_hash_1' => 'val_array_hash'})
       expect(@res).to include({'var_nested_array_hash_2' => [{'key' => 'val_array_hash'}]})
+      expect(@res).to include({'var_nested_whitespace_1' => 'val_nested_whitespace'})
+      expect(@res).to include({'var_nested_whitespace_2' => 'val_nested_whitespace'})
+      expect(@res).to include({'var_missingtarget_2' => '{{ var_missingtarget_1 }}'})
     end
   
     after do
